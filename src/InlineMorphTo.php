@@ -246,9 +246,15 @@ class InlineMorphTo extends Field
         $fields = $this->getFields($relatedInstance);
         $callbacks = [];
 
+        $relatedInstanceFillables = $relatedInstance->getFillable();
+
         foreach ($fields as $field) {
 
-            $callbacks[] = $field->fill($request, $relatedInstance);
+            if (in_array($field->attribute, $relatedInstanceFillables)) {
+
+                $callbacks[] = $field->fill($request, $relatedInstance);
+
+            }
 
         }
 
