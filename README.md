@@ -9,7 +9,7 @@
 ### Install
 
 ```
-composer require digital-creative/nova-inline-morph-to
+composer require taylanunutmaz/nova-inline-morph-to
 ```
 
 ### Usage
